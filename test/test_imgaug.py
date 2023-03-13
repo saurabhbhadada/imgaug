@@ -225,7 +225,7 @@ def test_is_integer_array():
         np.zeros((1, 2), dtype=np.float16),
         np.zeros((100,), dtype=np.float32),
         np.zeros((1, 2), dtype=np.float64),
-        np.zeros((1, 2), dtype=np.bool)
+        np.zeros((1, 2), dtype=np.bool_)
     ]
     for value in values_true:
         assert ia.is_integer_array(value) is True
@@ -250,7 +250,7 @@ def test_is_float_array():
         np.zeros((1, 2), dtype=np.uint16),
         np.zeros((1, 2), dtype=np.int32),
         np.zeros((1, 2), dtype=np.int64),
-        np.zeros((1, 2), dtype=np.bool)
+        np.zeros((1, 2), dtype=np.bool_)
     ]
     for value in values_true:
         assert ia.is_float_array(value) is True
@@ -422,7 +422,7 @@ def test_derive_random_states(mock_derive):
 def test_forward_random_state(mock_advance):
     with warnings.catch_warnings(record=True) as caught_warnings:
         warnings.simplefilter("always")
-        
+
         gen = iarandom.convert_seed_to_generator(1)
         _ = ia.forward_random_state(gen)
 
